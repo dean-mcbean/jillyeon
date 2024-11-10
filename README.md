@@ -1,10 +1,28 @@
-# Nuxt Minimal Starter
+# Force deploy of specific task definition
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+aws ecs update-service \
+ --cluster ecs-axe-cluster \
+ --service ecs-axe-service \
+ --task-definition ui-axe-task:<id> \
+ --force-new-deployment
+
+# Push new image manually
+
+```
+aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin <awsid>.dkr.ecr.ap-southeast-2.amazonaws.com/development-axe-ecr
+docker tag access-explorer <awsid>.dkr.ecr.ap-southeast-2.amazonaws.com/development-axe-ecr:latest
+docker push <awsid>.dkr.ecr.ap-southeast-2.amazonaws.com/development-axe-ecr:latest
+```
+
+If you're getting an unauthenticated message, use `docker logout <url>`
+
+# Nuxt 3 Minimal Starter
+
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-Make sure to install dependencies:
+Make sure to install the dependencies:
 
 ```bash
 # npm
@@ -29,7 +47,7 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 
 # pnpm
-pnpm dev
+pnpm run dev
 
 # yarn
 yarn dev
@@ -47,7 +65,7 @@ Build the application for production:
 npm run build
 
 # pnpm
-pnpm build
+pnpm run build
 
 # yarn
 yarn build
@@ -63,7 +81,7 @@ Locally preview production build:
 npm run preview
 
 # pnpm
-pnpm preview
+pnpm run preview
 
 # yarn
 yarn preview

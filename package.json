@@ -7,11 +7,36 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "docker:build": "docker build --platform linux/amd64 -t development-access-explorer .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^0.6.1",
+    "@pinia/nuxt": "^0.6.0",
+    "@types/mapbox-gl": "^3.4.0",
+    "eslint": "^9.13.0",
+    "nuxt": "~3.13.2",
+    "typescript": "^5.6.3",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue": "~3.5.12",
+    "vue-router": "~4.4.5"
   },
   "dependencies": {
-    "nuxt": "^3.14.159",
-    "vue": "latest",
-    "vue-router": "latest"
-  }
+    "@mdi/font": "^7.4.47",
+    "mapbox-gl": "^3.7.0",
+    "sass": "^1.79.5",
+    "vuetify": "^3.7.2"
+  },
+  "resoltuions": {
+    "rollup": "npm:@rollup/wasm-node@*"
+  },
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
