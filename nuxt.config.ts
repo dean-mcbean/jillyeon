@@ -2,6 +2,7 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
+
   modules: [
     '@pinia/nuxt',
     (_options, nuxt) => {
@@ -11,7 +12,7 @@ export default defineNuxtConfig({
       })
     },
     '@nuxt/eslint',
-  ],
+  ], ssr: false,
   devtools: { enabled: true },
   css: [
     'vuetify/lib/styles/main.sass',
