@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "docker:build": "docker build --platform linux/amd64 -t development-access-explorer .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "deploy:public": "npm run generate && echo joypea.app > .output/public/CNAME && echo.> .output/public/.nojekyll && cd .output/public && git init && git remote add origin git@github.com:dean-mcbean/jillyeon.git && git add . && git commit -m 'Deploy' && git push -f origin master"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

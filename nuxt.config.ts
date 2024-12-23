@@ -18,13 +18,6 @@ export default defineNuxtConfig({
     'vuetify/lib/styles/main.sass',
     '@mdi/font/css/materialdesignicons.min.css',
   ],
-  runtimeConfig: {
-    public: {
-      MAPBOX_ACCESS_TOKEN: process.env.NUXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
-      BASE_API_URL: process.env.NUXT_PUBLIC_BASE_API_URL,
-      CLOUDFRONT_URL: process.env.NUXT_PUBLIC_CLOUDFRONT_URL,
-    },
-  },
   build: {
     transpile: ['vuetify'],
   },

@@ -45,7 +45,6 @@
     </RelativeSprite>
     <div class="attribution">
       <img :src="'./jill/attribution.png'"><br>
-      <span>site by joypea</span>
     </div>
   </div>
 </template>
@@ -67,7 +66,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  height: 40px;
+  height: 240px;
   width: auto;
   color: #FFF8;
   text-align: right;
